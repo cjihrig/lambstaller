@@ -1,0 +1,40 @@
+{
+  "name": "lambstaller",
+  "version": "0.1.0",
+  "description": "Run npm install locally in a Lambda container",
+  "author": "Continuation Labs <contact@continuation.io> (http://continuation.io/)",
+  "main": "lib/index.js",
+  "homepage": "https://github.com/continuationlabs/lambstaller",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/continuationlabs/lambstaller"
+  },
+  "bugs": {
+    "url": "https://github.com/continuationlabs/lambstaller/issues"
+  },
+  "license": "MIT",
+  "scripts": {
+    "lint": "belly-button -f",
+    "test": "npm run lint && MOCK=1 lab -v -a code -t 100 -m 300000"
+  },
+  "engines": {
+    "node": ">=4.0.0"
+  },
+  "dependencies": {
+    "fs-extra": "0.30.0",
+    "insync": "2.1.1"
+  },
+  "devDependencies": {
+    "belly-button": "3.x.x",
+    "code": "4.x.x",
+    "lab": "11.x.x",
+    "stand-in": "4.x.x"
+  },
+  "keywords": [
+    "AWS",
+    "lambda",
+    "lambda function",
+    "install",
+    "installer"
+  ]
+}
