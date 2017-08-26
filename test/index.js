@@ -3,14 +3,13 @@
 const Cp = require('child_process');
 const Os = require('os');
 const Path = require('path');
-const Code = require('code');
 const Fse = require('fs-extra');
 const Lab = require('lab');
 const StandIn = require('stand-in');
 const L = require('../lib');
 
 const lab = exports.lab = Lab.script();
-const expect = Code.expect;
+const expect = Lab.expect;
 const describe = lab.describe;
 const it = lab.it;
 
