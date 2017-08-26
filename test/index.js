@@ -27,7 +27,9 @@ function maybeMock (options) {
     }, { stopAfter: 1 });
 
     StandIn.replace(Cp, 'exec', (stand, cmd, callback) => {
-      expect(cmd).to.equal(`docker run -v "${options.out}":/var/task lambci/lambda:build npm install --production`);
+      const version = options.version || 'nodejs4.3';
+
+      expect(cmd).to.equal(`docker run -v "${options.out}":/var/task lambci/lambda:build-${version} npm install --production`);
       callback();
     }, { stopAfter: 1 });
   }
@@ -38,6 +40,20 @@ describe('Lambstaller', () => {
     const options = {
       out: Path.join(Os.tmpdir(), 'lambstaller_tests'),
       pkg: Path.join(fixturesDir, 'package.json')
+    };
+
+    maybeMock(options);
+    L(options, (err) => {
+      expect(err).to.not.exist();
+      done();
+    });
+  });
+
+  it('changes version of Node.js', (done) => {
+    const options = {
+      out: Path.join(Os.tmpdir(), 'lambstaller_tests'),
+      pkg: Path.join(fixturesDir, 'package.json'),
+      version: 'nodejs6.10'
     };
 
     maybeMock(options);

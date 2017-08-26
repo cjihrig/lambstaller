@@ -33,6 +33,7 @@ The function exported by `lambstaller` has the following specification:
     - `options` (object) - A configuration object supporting the following schema.
       - `pkg` (string) - The path to a `package.json` file. This file will be the target of `npm install --production`.
       - `out` (string) - The directory where the `package.json` file will be copied and the install will occur.
+      - `version` (string) - Optional string, specifying the version of Node.js to target. Must match a version supported by Lambda. Defaults to `'nodejs4.3'`.
     - `callback` (function) - A function which is called upon completion. This function takes the following arguments.
       - `err` (error) - Represents any error that occurs.
   - Returns
