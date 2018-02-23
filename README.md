@@ -3,8 +3,8 @@
 [![Current Version](https://img.shields.io/npm/v/lambstaller.svg)](https://www.npmjs.org/package/lambstaller)
 [![Build Status via Travis CI](https://travis-ci.org/continuationlabs/lambstaller.svg?branch=master)](https://travis-ci.org/continuationlabs/lambstaller)
 ![Dependencies](http://img.shields.io/david/continuationlabs/lambstaller.svg)
+[![belly-button-style](https://img.shields.io/badge/eslint-bellybutton-4B32C3.svg)](https://github.com/continuationlabs/belly-button)
 
-[![belly-button-style](https://cdn.rawgit.com/continuationlabs/belly-button/master/badge.svg)](https://github.com/continuationlabs/belly-button)
 
 `lambstaller` allows you to run `npm install --production` inside of a Docker container that very closely resembles the AWS Lambda environment. This is useful for installing compiled addons locally, and then deploying to AWS.
 
